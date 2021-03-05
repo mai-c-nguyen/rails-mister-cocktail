@@ -16,3 +16,8 @@ ingredient_hash["drinks"].each do |hash|
   name_of_ingredient = hash['strIngredient1']
   ingredient = Ingredient.create(name: name_of_ingredient)
 end
+
+Cocktail.destroy_all
+file = URI.open('https://giantbomb1.cbsistatic.com/uploads/original/9/99864/2419866-nes_console_set.png')
+  cocktail = Cocktail.new(name: 'Moonlight Cocktail')
+    cocktail.photo.attach(io: file, filename: 'cocktail.png', content_type: 'image/png')
