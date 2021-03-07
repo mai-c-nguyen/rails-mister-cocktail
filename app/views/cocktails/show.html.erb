@@ -1,38 +1,47 @@
-<% if @cocktail.photo.attached? %>
-  <div class="banner" style="background-image: url('<%= cl_image_path @cocktail.photo.key, height: 300, width: 400, crop: :fill %>');">
-    <div class="banner-content">
-      <h1><%= @cocktail.name %></h1>
-    </div>
-    <%= link_to "Cocktail Menu", cocktails_path %>
+<div class="cards">
+  <div class="card">
+    <%= link_to "Back to all cocktails", root_path %>
   </div>
-
-<% else %>
-
-  <div class="banner" style="background-image: url(https://www.cforcevital.com/bdimages/200519-BW-Cocktail.png);">
-    <div class="banner-content">
-      <h1><%= @cocktail.name %></h1>
-    </div>
+  <div class="card">
+     <%= link_to "Add dose", new_cocktail_dose_path(@cocktail) %>
   </div>
+</div>
 
-<% end %>
+<div class="container w-50 mt-5">
+  <div class="cards-show d-flex">
+    <div class="cocktail-image">
+      <% if @cocktail.photo.attached? %>
+          <img src="<%= cl_image_path @cocktail.photo.key, height: 300, width: 400, crop: :fill %>" alt="">
+      <% else %>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmMvpKizDUTS1HE5rPxYAzP58OOwAGueoeLg&usqp=CAU" alt="">
 
-<div class="card-large">
-  <div class="cards">
-    <% @cocktail.doses.each do |dose| %>
-      <div class="card">
-        <h1>Ingredient</h1>
-        <p><%= dose.ingredient.name %></p>
-        <div class="btn">
-          <%= link_to "Delete", cocktail_doses_path(dose), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-secondary" %>
-        </div>
+      <% end %>
+    </div>
+
+    <div class="cocktail-description-ingredient position-relative">
+      <div>
+        <h1><%= @cocktail.name %></h1>
       </div>
-      <div class="card">
-        <h1>Description</h1>
-        <p><%= dose.description %></p>
-        <div class="btn">
-          <%= link_to "Delete", cocktail_doses_path(dose), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-secondary" %>
-        </div>
+      <% @cocktail.doses.each do |dose| %>
+      <div>
+         <h2>Ingredient</h2>
+         <p><%= dose.ingredient.name %>
+          <a rel="nofollow" href="/cocktails" data-method="delete">
+          <i class="fas fa-trash-alt"></i>
+          </a>
+          </p>
       </div>
-    <% end %>
+
+      <div>
+       <h2>Description</h2>
+       <p><%= dose.description %>
+        <a rel="nofollow" href="/cocktails" data-method="delete">
+          <i class="fas fa-trash-alt"></i>
+        </a>
+       </p>
+     </div>
+     <% end %>
+    </div>
+
   </div>
 </div>

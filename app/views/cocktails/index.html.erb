@@ -1,24 +1,33 @@
-
-<div class="banner" style="background-image: url(https://www.cforcevital.com/bdimages/200519-BW-Cocktail.png);">
+<div class="banner" style="background-image: url(https://prnewswire2-a.akamaihd.net/p/1893751/sp/189375100/thumbnail/entry_id/1_78upty0h/def_height/2700/def_width/2700/version/100011/type/1);">
   <div class="banner-content">
     <p>Awesome drinks for moms</p>
-
+  <a class="btn btn-secondary my-5" href="/cocktails/new">Add a new cocktail</a>
   </div>
 </div>
-<div class="container">
-  <div class="row">
+
+<div class="container w-70 mt-5 text-center">
+  <div class="cards-cocktails">
     <% @cocktails.each do |cocktail| %>
-      <div class="col-12 col-md-6 col-lg-3">
-        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://source.unsplash.com/500x400/?cocktail');">
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(https://media1.popsugar-assets.com/files/thumbor/4w0pZ6oQ4hBHLXDg32UHi58xXDo/0x692:1456x2148/fit-in/1024x1024/filters:format_auto-!!-:strip_icc-!!-/2021/02/09/990/n/1922195/da1c462460231090db6da6.49390943_/i/mardi-gras-cocktails.jpg);">
           <div class="card-description">
             <h2><%= cocktail.name %></h2>
           </div>
-          <%= link_to "Cocktail Inspect", cocktail_path(cocktail), class: 'card-link' %>
+          <%= link_to "cocktail.name", cocktail_path(cocktail), class: 'card-link' %>
+        </div>
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(https://media1.popsugar-assets.com/files/thumbor/4w0pZ6oQ4hBHLXDg32UHi58xXDo/0x692:1456x2148/fit-in/1024x1024/filters:format_auto-!!-:strip_icc-!!-/2021/02/09/990/n/1922195/da1c462460231090db6da6.49390943_/i/mardi-gras-cocktails.jpg);">
+            <div class="card-description">
+              <h2><%= cocktail.name %></h2>
+            </div>
+            <%= link_to "cocktail.name", cocktail_path(cocktail), class: 'card-link' %>
+        </div>
+
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(https://media1.popsugar-assets.com/files/thumbor/4w0pZ6oQ4hBHLXDg32UHi58xXDo/0x692:1456x2148/fit-in/1024x1024/filters:format_auto-!!-:strip_icc-!!-/2021/02/09/990/n/1922195/da1c462460231090db6da6.49390943_/i/mardi-gras-cocktails.jpg);">
+            <div class="card-description">
+              <h2><%= cocktail.name %></h2>
+            </div>
+            <%= link_to "cocktail.name", cocktail_path(cocktail), class: 'card-link' %>
         </div>
       </div>
     <% end %>
-  </div>
-  <div class="container">
-    <%= link_to "Add a cocktail", new_cocktail_path, class: "btn btn-secondary btn-lg" %>
   </div>
 </div>

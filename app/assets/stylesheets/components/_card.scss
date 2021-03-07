@@ -27,7 +27,10 @@
 .card-link:hover {
   opacity: 0.1;
 }
+.cards {
+  display: flex;
 
+}
 .card {
   width: 700px;
   border-radius: 3px;
@@ -39,12 +42,61 @@
   background-size: cover;
 }
 
-.cards {
+.card-category {
+  background-size: cover;
+  background-position: center;
+  height: 300px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
   display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 22px;
+  color: orange;
+  font-weight: bolder;
+  text-shadow: 0 0 10px rgba(0,0,0,0.7);
+}
+
+.cards-cocktails {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+  padding: 16px;
   margin-bottom: 30px;
 }
 
 .card h1, p {
-  opacity: .5;
+  opacity: .3;
+}
+
+.card {
+   opacity: .5;
+   font-size: 1.5rem;
+}
+
+.cards-show .card-description-ingredient {
+  padding: 32px;
+  padding-left: 30px;
+}
+
+.card-description-ingredient {
+   background-size: cover;
+  background-position: center;
+  height: 300px;
+  border-radius: 1px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 22px;
+  color: white;
+  font-weight: bolder;
+  text-shadow: 0 0 10px rgba(0,0,0,0.7);
+}
+
+.card show img {
+  width: 400px;
+  height: 500px;
+  object-fit: cover;
 }
 
